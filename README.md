@@ -1,1 +1,1 @@
-# Ineuron-DataScience-Assignments
+# iNeuron-DataScience-Assignments
