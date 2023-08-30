@@ -1,0 +1,38 @@
+use assignment;
+create table ATS(
+ID int,
+Technique varchar(25)
+);
+
+insert into ATS values (1,"DS"),
+(1,"Tableau"),
+(1,"SQL"),
+(2,"R"),
+(2,"PowerBi"),
+(1,"Python");
+
+# "DS" , "SQL", "Python"
+
+select * from ATS where Technique in("DS" , "SQL", "Python");
+
+#Q2 Assignment
+
+create table product_info(
+product_id int,
+product_name varchar(25));
+
+create table likes(
+user_id int,
+Pr_id int,
+like_date date);
+
+insert into product_info values(1001,"Blog"),
+(1002,"Youtube"),
+(1003,"Education");
+
+insert into likes values(1,1001,"2023-01-19"),
+(2,1003,"2023-01-18");
+
+select product_id from product_info
+where product_id not in (select p.product_id  from product_info p inner join likes l
+on p.product_id = l.pr_id);
